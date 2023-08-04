@@ -26,7 +26,7 @@ func _ready():
 		index = randi() % len(backgrounds)
 		texture = load(backgrounds[index])
 
-
+## Load all background textures from the folder
 func _loadSprites() -> void:
 	var dir = DirAccess.open(pathToBackgrounds)
 	dir.list_dir_begin()
@@ -37,7 +37,7 @@ func _loadSprites() -> void:
 		file = dir.get_next()
 	dir.list_dir_end()
 
-
+## Change background texture to the next one
 func _next_background() -> void:
 	if backgroundSprites.size() == 0 and backgrounds.size() == 0:
 		return
