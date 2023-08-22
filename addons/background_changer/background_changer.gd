@@ -28,6 +28,9 @@ func _ready():
 
 ## Load all background textures from the folder
 func _loadSprites() -> void:
+	if pathToBackgrounds == "":
+		return
+
 	var dir = DirAccess.open(pathToBackgrounds)
 	dir.list_dir_begin()
 	var file = dir.get_next()
