@@ -24,7 +24,7 @@ func _ready():
 	else:
 		_loadSprites()
 		index = randi() % len(backgrounds)
-		texture = load(backgrounds[index])
+		texture = ResourceLoader.load(backgrounds[index])
 
 ## Load all background textures from the folder
 func _loadSprites() -> void:
@@ -52,6 +52,6 @@ func _next_background() -> void:
 			nextButton.text = backgroundSprites[index].resource_path + " " + "Index: " + str(index)
 	else:
 		index = (index + 1) % backgrounds.size()
-		texture = load(backgrounds[index])
+		texture = ResourceLoader.load(backgrounds[index])
 		if nextButton != null:
 			nextButton.text = backgrounds[index] + " " + "Index: " + str(index)
